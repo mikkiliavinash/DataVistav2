@@ -65,7 +65,6 @@ if uploaded_file is not None:
                 st.write(summarydf)
 
                 # Function to generate a detailed PDF report
-                @st.cache
                 def generate_pdf():
                     class pdff(FPDF):
                         def header(self):
