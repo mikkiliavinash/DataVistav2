@@ -4,7 +4,7 @@ from fpdf import FPDF, HTMLMixin
 import io
 from datetime import datetime
 
-st.set_page_config(layout="wide
+st.set_page_config(layout="wide)
 initial_sidebar_state="expanded"
 # Sidebar Navigation
 st.sidebar.title("Navigation")
