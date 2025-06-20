@@ -134,10 +134,10 @@ if uploaded_file is not None:
 
                     # Save PDF to a BytesIO buffer
                     pdf_buffer = io.BytesIO()
-                    pdf.output(pdf_buffer)  
-                    pdf_buffer.seek(0)  # Move cursor to start
-                    
-                    return pdf_buffer  # Return raw bytes
+                    pdf_bytes = pdf.output(dest='S').encode('latin1')  # Convert string to bytes
+                    pdf_buffer.write(pdf_bytes)
+                    pdf_buffer.seek(0)
+                    return pdf_buffer
                 
                 if st.button("Generate PDF"):
                     pdf_buffer = generate_pdf()  # Get the PDF as a BytesIO object
